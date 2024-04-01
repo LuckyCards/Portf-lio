@@ -1,0 +1,36 @@
+:root {
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --background-color: linear-gradient(90deg, #121212, #151515, #121212);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: linear-gradient(90deg, #121212, #151515, #121212);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  position: relative;
+  display: flex;
+  background: var(--background-color);
+}
