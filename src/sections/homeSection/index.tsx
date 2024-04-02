@@ -4,7 +4,7 @@ import style from "./home.module.scss";
 export default function HomeSection() {
   return (
     <div className={style.container}>
-      <IntroAnimation />
+      <IntroAnimation interval={750} multiplyerDelay={0.9} duration={1500} />
     </div>
   );
 }
