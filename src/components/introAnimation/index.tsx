@@ -23,7 +23,7 @@ export default function IntroAnimation({
     if (animating) {
       const intervalId = setInterval(() => {
         setImage(
-          `/public/assets/SkillsIcons/${data[index % data.length].image}`,
+          `/public/assets/SkillsIcons/${data[index % data.length].image}`
         );
         setIndex((prevIndex) => prevIndex + 1);
         setDelay((prevDelay) => prevDelay * multiplyerDelay);
@@ -44,19 +44,21 @@ export default function IntroAnimation({
 
   return (
     <div className={style.container}>
-      {animating && image && <img src={image} />}
-      {!animating ? (
-        <div className={style.title}>
-          <h1 className={style.word}>L</h1>
-          <h1 className={style.title}>
-            <WritingTextAnimation
-              text={"ucas Cardoso"}
-              velocity={120}
-              initialDelay={2000}
-              style={style}
-            />
-          </h1>
+      {animating && image && (
+        <div className={style.borderImage}>
+          <img src={image} />
         </div>
+      )}
+      {!animating ? (
+        <h1 className={style.word}>
+          <WritingTextAnimation
+            text={"ucas Cardoso"}
+            velocity={120}
+            initialLetter="L"
+            initialDelay={1200}
+            style={style}
+          />
+        </h1>
       ) : null}
     </div>
   );

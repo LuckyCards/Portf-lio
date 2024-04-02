@@ -1,23 +1,26 @@
 [
   {
-    "image": "Blender.png"
+    "image": "figma.png"
   },
   {
-    "image": "Css.png"
+    "image": "css.png"
   },
   {
-    "image": "Git.png"
+    "image": "git.png"
   },
   {
-    "image": "Html.png"
+    "image": "html.png"
   },
   {
-    "image": "Javascript.png"
+    "image": "javascript.png"
   },
   {
-    "image": "Sass.png"
+    "image": "sass.png"
   },
   {
-    "image": "Typescript.png"
+    "image": "typescript.png"
+  },
+  {
+    "image": "vite.png"
   }
 ]

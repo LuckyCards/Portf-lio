@@ -1,29 +1,46 @@
 .container {
-  img {
-    width: 400px;
-    height: 400px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .borderImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 135px;
+    height: 135px;
+    border-radius: 30px;
+    background-color: rgba(23, 27, 44, 0.7);
+
+    img {
+      width: 72%;
+      height: 72%;
+      border-radius: 12px;
+
+      animation: fadeIn 0.5s ease-in-out;
+    }
   }
 
-  .title {
-    display: flex;
-    align-items: center;
-    .word {
-      font-size: 5rem;
-      position: relative;
-    }
-    .bar {
-      display: inline-flex;
-      position: absolute;
-      width: 3px;
-      margin-left: 1px;
-      height: 100%;
-      background: aliceblue;
-      animation: fade 0.5s infinite alternate-reverse;
-    }
+  .word {
+    text-align: right;
+    font-size: 7rem;
+    text-wrap: nowrap;
+    position: relative;
+  }
+
+  .bar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    margin-left: 1px;
+    height: 87%;
+    background: aliceblue;
+    animation: bar 0.5s infinite alternate-reverse;
   }
 }
 
-@keyframes fade {
+@keyframes bar {
   0% {
     opacity: 0%;
   }
@@ -35,5 +52,15 @@
   }
   100% {
     opacity: 80%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
   }
 }

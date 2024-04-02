@@ -4,19 +4,21 @@ type Types = {
   text: string;
   velocity: number;
   initialDelay: number;
+  initialLetter: string;
   style: CSSModuleClasses;
 };
 
 export default function WritingTextAnimation({
+  initialLetter,
   text,
   velocity,
   initialDelay,
   style,
 }: Types) {
-  const [word, setWord] = useState("");
+  const [word, setWord] = useState(initialLetter);
 
   useEffect(() => {
-    let currentText = "";
+    let currentText = initialLetter;
     const timeoutDelay = setTimeout(() => {
       for (let i = 0; i < text.length; i++) {
         const timeoutVelocity = setTimeout(() => {
