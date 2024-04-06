@@ -1,0 +1,94 @@
+{
+  "mainIcons": [
+    {
+      "image": "figma",
+      "alt": "Ícone do Figma"
+    },
+    {
+      "image": "css",
+      "alt": "Ícone do CSS"
+    },
+    {
+      "image": "react",
+      "alt": "Ícone do React"
+    },
+    {
+      "image": "git",
+      "alt": "Ícone do Git"
+    },
+    {
+      "image": "html",
+      "alt": "Ícone do HTML"
+    },
+    {
+      "image": "javascript",
+      "alt": "Ícone do JavaScript"
+    },
+    {
+      "image": "sass",
+      "alt": "Ícone do Sass"
+    },
+    {
+      "image": "github",
+      "alt": "Ícone do GitHub"
+    },
+    {
+      "image": "typescript",
+      "alt": "Ícone do TypeScript"
+    },
+    {
+      "image": "vite",
+      "alt": "Ícone do Vite"
+    }
+  ],
+  "allIcons": [
+    {
+      "image": "figma",
+      "alt": "Ícone do Figma"
+    },
+    {
+      "image": "css",
+      "alt": "Ícone do CSS"
+    },
+    {
+      "image": "react",
+      "alt": "Ícone do React"
+    },
+    {
+      "image": "blender",
+      "alt": "Ícone do Blender"
+    },
+    {
+      "image": "git",
+      "alt": "Ícone do Git"
+    },
+    {
+      "image": "html",
+      "alt": "Ícone do HTML"
+    },
+    {
+      "image": "photoshop",
+      "alt": "Ícone do Photoshop"
+    },
+    {
+      "image": "javascript",
+      "alt": "Ícone do JavaScript"
+    },
+    {
+      "image": "sass",
+      "alt": "Ícone do Sass"
+    },
+    {
+      "image": "github",
+      "alt": "Ícone do GitHub"
+    },
+    {
+      "image": "typescript",
+      "alt": "Ícone do TypeScript"
+    },
+    {
+      "image": "vite",
+      "alt": "Ícone do Vite"
+    }
+  ]
+}

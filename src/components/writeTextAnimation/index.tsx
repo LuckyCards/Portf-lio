@@ -3,29 +3,33 @@ import { useEffect, useState } from "react";
 type Types = {
   text: string;
   velocity: number;
-  initialDelay: number;
-  initialLetter: string;
   style: CSSModuleClasses;
+  initialDelay?: number;
+  initialLetter?: string;
+  endAnimation?: any;
 };
 
-export default function WritingTextAnimation({
-  initialLetter,
+export default function WriteTextAnimation({
   text,
   velocity,
-  initialDelay,
   style,
+  initialDelay = 0,
+  initialLetter = "",
+  endAnimation = null,
 }: Types) {
   const [word, setWord] = useState(initialLetter);
 
   useEffect(() => {
-    let currentText = initialLetter;
+    let typedText = initialLetter;
     const timeoutDelay = setTimeout(() => {
       for (let i = 0; i < text.length; i++) {
         const timeoutVelocity = setTimeout(() => {
-          currentText += text.charAt(i);
-          setWord(currentText);
+          typedText += text.charAt(i);
+          setWord(typedText);
+          if (endAnimation != null) {
+            if (i === text.length - 1) endAnimation(true);
+          }
         }, i * velocity);
-
         if (i === text.length) {
           clearTimeout(timeoutVelocity);
           clearTimeout(timeoutDelay);

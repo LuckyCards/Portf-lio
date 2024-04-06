@@ -1,6 +1,36 @@
 .container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   align-items: center;
+  justify-content: center;
+
+  .title {
+    position: absolute;
+    font-size: 116px;
+    font-weight: normal;
+    text-wrap: nowrap;
+  }
+  .others {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 250px;
+
+    .word {
+      text-align: center;
+      font-size: 39px;
+      font-weight: normal;
+    }
+  }
+}
+
+@keyframes TextLeft {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
