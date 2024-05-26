@@ -1,21 +1,35 @@
+import { useState } from "react";
 import style from "./carrouselAnimation.module.scss";
-import data from "../../../public/assets/jsons/icons.json";
-import { useEffect } from "react";
 
-export default function CarrouselAnimation() {
-  useEffect(() => {}, []);
+type Icons = {
+  image: string;
+  alt: string;
+};
+
+type CarrouselProps = {
+  initialImages: {
+    allIcons: Icons[];
+  };
+};
+
+export default function CarrouselAnimation({ initialImages }: CarrouselProps) {
+  const [images, _] = useState(initialImages);
+
+  function renderCarrouselIcons(icons: Icons[]) {
+    return icons.map((e: Icons) => (
+      <img
+        key={e.image}
+        src={`../../../public/assets/SkillsIcons/${e.image}Uncolor.png`}
+        alt=""
+      />
+    ));
+  }
 
   return (
     <div className={style.containerCarrousel}>
       <div className={style.images}>
-        {data["allIcons"].map((e) => {
-          return (
-            <img
-              src={`../../../public/assets/SkillsIcons/${e.image}Uncolor.png`}
-              alt={e.alt}
-            />
-          );
-        })}
+        {renderCarrouselIcons(images.allIcons)}
+        {renderCarrouselIcons(images.allIcons)}
       </div>
     </div>
   );

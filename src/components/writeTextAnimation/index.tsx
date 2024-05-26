@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 type Types = {
   text: string;
   velocity: number;
-  style: CSSModuleClasses;
+  style: any;
   initialDelay?: number;
   initialLetter?: string;
   endAnimation?: any;
@@ -21,6 +21,7 @@ export default function WriteTextAnimation({
 
   useEffect(() => {
     let typedText = initialLetter;
+    
     const timeoutDelay = setTimeout(() => {
       for (let i = 0; i < text.length; i++) {
         const timeoutVelocity = setTimeout(() => {
@@ -39,7 +40,7 @@ export default function WriteTextAnimation({
   }, [text, velocity]);
 
   return (
-    <span className={style.word}>
+    <span className={style}>
       {word}
       <span className={style.bar} />
     </span>

@@ -1,5 +1,4 @@
 import WriteTextAnimation from "../writeTextAnimation";
-import data from "../../../public/assets/jsons/icons.json";
 import style from "./introAnimation.module.scss";
 import { useEffect, useState } from "react";
 
@@ -20,13 +19,17 @@ export default function IntroAnimation({
   const [delay, setDelay] = useState(interval);
   const [image, setImage] = useState("");
   const [endIntroAnimation, setEndIntroAnimation] = useState(false);
-  
+
   useEffect(() => {
     if (!endIntroAnimation) {
       const animationIntervalId = setInterval(() => {
-        setImage(
-          `/public/assets/SkillsIcons/${data["mainIcons"][index % data["mainIcons"].length].image}.png`
-        );
+        fetch("/assets/jsons/icons.json")
+          .then((response) => response.json())
+          .then((data) => {
+            setImage(
+              `/assets/SkillsIcons/${data["mainIcons"][index % data["mainIcons"].length].image}.png`
+            );
+          });
         setIndex((prevIndex) => prevIndex + 1);
         setDelay((prevDelay) => prevDelay * multiplyerDelay);
       }, delay);
@@ -52,16 +55,23 @@ export default function IntroAnimation({
         </div>
       )}
       {endIntroAnimation ? (
-        <h1 className={style.word}>
+        <div className={style.titles}>
           <WriteTextAnimation
-            text={"etão é um mané"}
+            text={"ucas Cardoso"}
             velocity={120}
-            initialLetter="V"
+            initialLetter="L"
             initialDelay={1200}
-            endAnimation={endIntro}
-            style={style}
+            style={style.titleWrite}
           />
-        </h1>
+
+          <WriteTextAnimation
+            text={"<Desenvolvedor Front End/>"}
+            velocity={120}
+            initialDelay={1200}
+            style={style.subtitleWrite}
+            endAnimation={endIntro}
+          />
+        </div>
       ) : null}
     </div>
   );

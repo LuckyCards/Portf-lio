@@ -6,31 +6,32 @@
   align-items: center;
   justify-content: center;
 
-  .title {
-    position: absolute;
-    font-size: 116px;
-    font-weight: normal;
-    text-wrap: nowrap;
-  }
-  .others {
+  .titles {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 250px;
+    align-items: center;
+    position: absolute;
 
-    .word {
-      text-align: center;
-      font-size: 39px;
+    .titleWrite {
+      font-size: 116px;
       font-weight: normal;
+      text-wrap: nowrap;
+      letter-spacing: -10px;
+    }
+    .subtitleWrite {
+      font-size: 45px;
+      font-weight: normal;
+      text-wrap: nowrap;
+      position: absolute;
+      letter-spacing: -2px;
+      top: 135px;
     }
   }
-}
 
-@keyframes TextLeft {
-  0% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
+  .carrousel {
+    display: flex;
+    flex-direction: column;
+    filter: opacity(10%);
+    margin-top: 320px;
   }
 }
